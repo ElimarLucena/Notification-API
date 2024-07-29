@@ -1,0 +1,26 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Web.Api";
+
+package notication;
+
+// The notification service definition.
+service Notification {
+  rpc SendMessage (SendMessageRequest) returns (SendMessageReply);
+}
+
+enum MessageType {
+  MESSAGE_TYPE_WELCAME = 0;
+  MESSAGE_TYPE_UPDATE_WARMING = 1;
+}
+
+message SendMessageRequest {
+  MessageType message_type = 1;
+  int64 account_id = 2;
+  string name = 3;
+  string email = 4;
+}
+
+message SendMessageReply {
+  string message = 1;
+}

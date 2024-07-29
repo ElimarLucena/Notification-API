@@ -10,6 +10,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
+app.MapGrpcService<NotificationService>();
 
 IWebHostEnvironment env = app.Environment;
 
